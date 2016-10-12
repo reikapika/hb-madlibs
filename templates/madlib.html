@@ -1,7 +1,41 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="/static/madlibs.css">
+    </head>
     <body>
-    <p>There once was a {{ color }} {{ noun }} sitting in the Hackbright lab.
-    When {{ person }} went to pick it up, it burst into flames in a totally
-    {{ adjective }} way.
+
+        {% if decision == 1 %}
+
+            <h2>
+            You're hanging out with {{ friends }} from Friends. 
+            Everything's going well, but then they have to go to {{ city }},
+            which is a {{ adjective }} place. So you choose to {{ verb }} away
+            with {{ celebrity }}, who's wearing a weird {{ color }} {{ noun }}.
+            </h2>
+
+        {% endif %}
+
+        {% if decision == 2 %}
+
+             <h2>
+            {{ friends }} from Friends is your mortal enemy.
+            They currently live in {{ city }} and drive a {{ color }} Tesla.
+            Their best friend is the {{ adjective }} {{ celebrity }}.
+            You wish that {{ celebrity }} was your {{ noun }}.
+            </h2>
+
+        {% endif %}
+
+        {% if decision == 3 %}
+
+             <h2>
+            {{ friends }} is your hero, and so is {{ celebrity }}.
+            Unfortunately, they're planning on moving to {{ city }} and 
+            will bring their {{ color }} dogs with them. That is so
+            {{ adjective }}. {{ noun }} is now your best friend.
+            </h2>
+
+        {% endif %}
+
     </body>
 </html>

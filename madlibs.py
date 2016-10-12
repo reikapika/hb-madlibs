@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randint
 
 from flask import Flask, render_template, request
 
@@ -54,13 +54,19 @@ def show_madlib_form():
 def show_madlib():
     """The madlib game."""
 
-    person = request.args.get("madlib-person")
+    friends = request.args.get("madlib-friends")
     color = request.args.get("madlib-color")
     noun = request.args.get("madlib-noun")
     adjective = request.args.get("madlib-adjective")
+    celebrity = request.args.get("madlib-celebrity")
+    verb = request.args.get("madlib-verb")
+    city = request.args.get("madlib-city")
+    print x
+    decision = randint(1, 3)
 
-    return render_template("madlib.html", person=person, color=color, 
-                            noun=noun, adjective=adjective)
+    return render_template("madlib.html", friends=friends, color=color, 
+                            noun=noun, adjective=adjective, celebrity=celebrity,
+                            verb=verb, city=city, decision=decision)
 
 
 if __name__ == '__main__':
