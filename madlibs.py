@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice, randint, sample
 
 from flask import Flask, render_template, request
 
@@ -32,7 +32,7 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment = sample(AWESOMENESS, 3)
 
     return render_template("compliment.html",
                            person=player,
@@ -59,9 +59,8 @@ def show_madlib():
     noun = request.args.get("madlib-noun")
     adjective = request.args.get("madlib-adjective")
     celebrity = request.args.get("madlib-celebrity")
-    verb = request.args.get("madlib-verb")
+    verb = request.args.getlist("madlib-verb")
     city = request.args.get("madlib-city")
-    print x
     decision = randint(1, 3)
 
     return render_template("madlib.html", friends=friends, color=color, 

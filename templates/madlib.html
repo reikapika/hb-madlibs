@@ -1,21 +1,23 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="/static/madlibs.css">
-    </head>
-    <body>
-
+{% extends "base.html" %}
+{% block title %}The Madlibs Game{% endblock %}    
+       
+{% block content %}
         {% if decision == 1 %}
+            <h1>STORY #1</h1>
+            {% if len(verb) > 1 %}
 
             <h2>
             You're hanging out with {{ friends }} from Friends. 
             Everything's going well, but then they have to go to {{ city }},
-            which is a {{ adjective }} place. So you choose to {{ verb }} away
+            which is a {{ adjective }} place. So you choose to {% for verb in verb %}{{ verb }} away
             with {{ celebrity }}, who's wearing a weird {{ color }} {{ noun }}.
             </h2>
-
+            {% endfor %}
+            {% endif %}
         {% endif %}
 
         {% if decision == 2 %}
+            <h1>STORY #2</h1>
 
              <h2>
             {{ friends }} from Friends is your mortal enemy.
@@ -27,6 +29,7 @@
         {% endif %}
 
         {% if decision == 3 %}
+            <h1>STORY #3</h1>
 
              <h2>
             {{ friends }} is your hero, and so is {{ celebrity }}.
@@ -36,6 +39,4 @@
             </h2>
 
         {% endif %}
-
-    </body>
-</html>
+{% endblock %}

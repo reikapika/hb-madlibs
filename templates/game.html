@@ -1,9 +1,7 @@
-<!doctype html>
-<html>
-<head>
-  <title>Let's play a game!</title>
-</head>
-    <body>
+{% extends "base.html" %}
+{% block title %}Game{% endblock %}
+{% block content %}
+
         <form action="/madlib">
             <h2>Thanks for playing our game! Please choose from the options below.</h2>
             
@@ -41,6 +39,4 @@
             <p></p>
             <input type="submit">
         </form>
-    
-    </body>
-</html>
+ {% endblock %}
